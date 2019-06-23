@@ -1,0 +1,505 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[73]:
+
+
+import numpy as np
+
+
+# In[74]:
+
+
+np.array([1,2,3])
+
+
+# In[75]:
+
+
+L = np.array([1,2,3])
+
+
+# In[76]:
+
+
+L.dtype
+
+
+# In[77]:
+
+
+L[2] = ''
+
+
+# In[ ]:
+
+
+L[1] = 1.2222
+
+
+# In[ ]:
+
+
+L
+
+
+# In[ ]:
+
+
+np.zeros(10, dtype='int')
+
+
+# In[ ]:
+
+
+np.ones(10, dtype='int')
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+np.full((2,3), 2,dtype='int')
+
+
+# In[ ]:
+
+
+np.full((5,3), 2,dtype='int')
+
+
+# In[ ]:
+
+
+[i for i in range(10)]
+
+
+# In[ ]:
+
+
+np.arange(0, 10, 2)
+
+
+# In[ ]:
+
+
+np.linspace(0, 10, 5)
+
+
+# In[ ]:
+
+
+np.random.randint(4,8, size=(3, 7))
+
+
+# In[ ]:
+
+
+np.random.seed(66)
+np.random.randint(0, 10)
+
+
+# In[ ]:
+
+
+np.random.random((2,3))
+
+
+# In[ ]:
+
+
+np.random.normal(0,1,(2,3))
+
+
+# In[ ]:
+
+
+np.random.normal(1, 200, (2,3))
+
+
+# In[ ]:
+
+
+get_ipython().run_line_magic('pinfo', 'np.random.normal')
+
+
+# In[ ]:
+
+
+help(np.random)
+
+
+# ###props
+
+# In[ ]:
+
+
+x = np.arange(10)
+
+
+# In[ ]:
+
+
+X= np.arange(15).reshape(3,5)
+
+
+# In[ ]:
+
+
+X
+
+
+# In[ ]:
+
+
+x[1]
+
+
+# In[ ]:
+
+
+X[:2]
+
+
+# In[ ]:
+
+
+X[2][3]
+
+
+# In[ ]:
+
+
+X[2:3]
+
+
+# In[ ]:
+
+
+X[2,3]
+
+
+# In[ ]:
+
+
+x[:3]
+
+
+# In[78]:
+
+
+X[:2, :3]
+
+
+# In[79]:
+
+
+X[:2, ::2]
+
+
+# In[80]:
+
+
+np.zeros(10, dtype='int')
+
+
+# In[81]:
+
+
+np.zeros(10, dtype='int')
+
+
+# In[82]:
+
+
+np.zeros(10, dtype='int')
+
+
+# In[83]:
+
+
+X[::-1, ::-1]
+
+
+# In[84]:
+
+
+X[0]
+
+
+# In[85]:
+
+
+X[0].ndim
+
+
+# In[86]:
+
+
+X[0, :].ndim
+
+
+# In[87]:
+
+
+X[:, 0]
+
+
+# In[88]:
+
+
+X
+
+
+# In[89]:
+
+
+X.shape
+
+
+# In[90]:
+
+
+np.full((2,3), 2,dtype='int')
+
+
+# In[91]:
+
+
+X.reshape(3,-1)
+
+
+# In[92]:
+
+
+np.full((2,3), 2,dtype='int')
+
+
+# In[93]:
+
+
+np.full((2,3), 2,dtype='int')
+
+
+# In[94]:
+
+
+X.reshape(-1, 15)
+
+
+# In[95]:
+
+
+y = x
+
+
+# In[96]:
+
+
+y
+
+
+# In[97]:
+
+
+y = x.copy()
+
+
+# In[98]:
+
+
+y
+
+
+# In[105]:
+
+
+A = np.array([[1,2,3],[7,7,7]])
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[111]:
+
+
+B = np.array([[4,5,6]])
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[100]:
+
+
+A
+
+
+# In[114]:
+
+
+np.concatenate([A,B], axis=0)
+
+
+# In[116]:
+
+
+np.array(2,3)
+
+
+# In[126]:
+
+
+A = np.arange(15).reshape((5, 3))
+
+
+# In[130]:
+
+
+A.reshape(1,-1)
+
+
+# In[131]:
+
+
+B.reshape(1,-1)
+
+
+# In[ ]:
+
+
+
+
+
+# In[125]:
+
+
+B = np.arange(20).reshape((4, 5))
+
+
+# In[133]:
+
+
+np.concatenate([A.reshape(1,-1),B.reshape(1,-1)], axis=1)
+
+
+# In[137]:
+
+
+np.vstack([A.reshape(1,-1),B])
+
+
+# In[138]:
+
+
+np.vstack([A])
+
+
+# In[139]:
+
+
+C= np.arange(10).reshape(5,2)
+
+
+# In[140]:
+
+
+C
+
+
+# In[143]:
+
+
+v1,v2,v3 = np.split(C, [2, 3])
+
+
+# In[144]:
+
+
+v1
+
+
+# In[145]:
+
+
+v2
+
+
+# ## A = np.arange(15).reshape((5, 3))
+
+# In[146]:
+
+
+v3
+
+
+# In[147]:
+
+
+A.T
+
+
+# In[148]:
+
+
+A
+
+
+# In[149]:
+
+
+s, r = np.hsplit(A, [-1])
+
+
+# In[150]:
+
+
+s
+
+
+# In[151]:
+
+
+r
+
+
+# In[152]:
+
+
+r.reshape([:, 1])
+
+
+# In[153]:
+
+
+r[:,0]
+
+
+# In[ ]:
+
+
+
+
